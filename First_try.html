@@ -13405,7 +13405,7 @@ Loaded https://poloniex.com/public?command=returnChartData&amp;currencyPair=BTC_
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ETRVU</span> <span class="o">=</span> <span class="n">get_quandl_data</span><span class="p">(</span><span class="s1">&#39;BCHAIN/ETRVU&#39;</span><span class="p">)</span>
@@ -13415,6 +13415,7 @@ Loaded https://poloniex.com/public?command=returnChartData&amp;currencyPair=BTC_
 <span class="n">MIREV</span> <span class="o">=</span> <span class="n">get_quandl_data</span><span class="p">(</span><span class="s1">&#39;BCHAIN/MIREV&#39;</span><span class="p">)</span>
 <span class="n">CPTRA</span> <span class="o">=</span> <span class="n">get_quandl_data</span><span class="p">(</span><span class="s1">&#39;BCHAIN/CPTRA&#39;</span><span class="p">)</span>
 <span class="n">CPTRV</span> <span class="o">=</span> <span class="n">get_quandl_data</span><span class="p">(</span><span class="s1">&#39;BCHAIN/CPTRV&#39;</span><span class="p">)</span>
+<span class="n">TOUTV</span> <span class="o">=</span> <span class="n">get_quandl_data</span><span class="p">(</span><span class="s2">&quot;BCHAIN/TOUTV&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13438,6 +13439,7 @@ Loaded BCHAIN/NADDU from cache
 Loaded BCHAIN/MIREV from cache
 Loaded BCHAIN/CPTRA from cache
 Loaded BCHAIN/CPTRV from cache
+Loaded BCHAIN/TOUTV from cache
 </pre>
 </div>
 </div>
@@ -13448,7 +13450,7 @@ Loaded BCHAIN/CPTRV from cache
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ETRVU</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ETRVU&quot;</span><span class="p">]</span>
@@ -13458,6 +13460,7 @@ Loaded BCHAIN/CPTRV from cache
 <span class="n">MIREV</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;MIREV&quot;</span><span class="p">]</span>
 <span class="n">CPTRA</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;CPTRA&quot;</span><span class="p">]</span>
 <span class="n">CPTRV</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;CPTRV&quot;</span><span class="p">]</span>
+<span class="n">TOUTV</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;TOUTV&quot;</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -13467,10 +13470,10 @@ Loaded BCHAIN/CPTRV from cache
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">ETRVU</span><span class="p">,</span> <span class="n">TRVOU</span><span class="p">,</span> <span class="n">NTRAN</span><span class="p">,</span> <span class="n">NADDU</span><span class="p">,</span> <span class="n">MIREV</span><span class="p">,</span> <span class="n">CPTRA</span><span class="p">,</span> <span class="n">CPTRV</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">ETRVU</span><span class="p">,</span> <span class="n">TRVOU</span><span class="p">,</span> <span class="n">NTRAN</span><span class="p">,</span> <span class="n">NADDU</span><span class="p">,</span> <span class="n">MIREV</span><span class="p">,</span> <span class="n">CPTRA</span><span class="p">,</span> <span class="n">CPTRV</span><span class="p">,</span> <span class="n">TOUTV</span><span class="p">]</span>
 <span class="n">data_frame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">join</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>
 <span class="n">data_frame</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;pearson&quot;</span><span class="p">)</span>
 </pre></div>
@@ -13485,7 +13488,7 @@ Loaded BCHAIN/CPTRV from cache
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[39]:</div>
+<div class="prompt output_prompt">Out[47]:</div>
 
 
 
@@ -13515,6 +13518,7 @@ Loaded BCHAIN/CPTRV from cache
       <th>MIREV</th>
       <th>CPTRA</th>
       <th>CPTRV</th>
+      <th>TOUTV</th>
     </tr>
   </thead>
   <tbody>
@@ -13527,6 +13531,7 @@ Loaded BCHAIN/CPTRV from cache
       <td>0.948654</td>
       <td>0.749079</td>
       <td>-0.009332</td>
+      <td>0.152135</td>
     </tr>
     <tr>
       <th>TRVOU</th>
@@ -13537,6 +13542,7 @@ Loaded BCHAIN/CPTRV from cache
       <td>0.871617</td>
       <td>0.721737</td>
       <td>-0.006940</td>
+      <td>0.098593</td>
     </tr>
     <tr>
       <th>NTRAN</th>
@@ -13547,6 +13553,7 @@ Loaded BCHAIN/CPTRV from cache
       <td>0.558670</td>
       <td>0.410444</td>
       <td>-0.023126</td>
+      <td>0.355823</td>
     </tr>
     <tr>
       <th>NADDU</th>
@@ -13557,6 +13564,7 @@ Loaded BCHAIN/CPTRV from cache
       <td>0.656015</td>
       <td>0.513063</td>
       <td>-0.022019</td>
+      <td>0.327113</td>
     </tr>
     <tr>
       <th>MIREV</th>
@@ -13567,6 +13575,7 @@ Loaded BCHAIN/CPTRV from cache
       <td>1.000000</td>
       <td>0.871395</td>
       <td>-0.010298</td>
+      <td>0.112946</td>
     </tr>
     <tr>
       <th>CPTRA</th>
@@ -13577,6 +13586,7 @@ Loaded BCHAIN/CPTRV from cache
       <td>0.871395</td>
       <td>1.000000</td>
       <td>-0.016376</td>
+      <td>0.045355</td>
     </tr>
     <tr>
       <th>CPTRV</th>
@@ -13586,6 +13596,18 @@ Loaded BCHAIN/CPTRV from cache
       <td>-0.022019</td>
       <td>-0.010298</td>
       <td>-0.016376</td>
+      <td>1.000000</td>
+      <td>-0.016268</td>
+    </tr>
+    <tr>
+      <th>TOUTV</th>
+      <td>0.152135</td>
+      <td>0.098593</td>
+      <td>0.355823</td>
+      <td>0.327113</td>
+      <td>0.112946</td>
+      <td>0.045355</td>
+      <td>-0.016268</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -13616,14 +13638,16 @@ MIREV -&gt; "Historical data showing (number of bitcoins mined per day + transac
 
 CPTRA -&gt; "Data showing miners revenue divided by the number of transactions."
 
-CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction volume."</code></pre>
+CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction volume."
+
+TOUTV -&gt; "The total value of all transaction outputs per day. This includes coins which were returned to the sender as change."</code></pre>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_frame_cle1</span> <span class="o">=</span> <span class="n">data_frame</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">1224</span><span class="p">)</span>
@@ -13640,7 +13664,7 @@ CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction vol
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[40]:</div>
+<div class="prompt output_prompt">Out[48]:</div>
 
 
 
@@ -13670,6 +13694,7 @@ CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction vol
       <th>MIREV</th>
       <th>CPTRA</th>
       <th>CPTRV</th>
+      <th>TOUTV</th>
     </tr>
   </thead>
   <tbody>
@@ -13682,6 +13707,7 @@ CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction vol
       <td>0.942067</td>
       <td>0.821587</td>
       <td>-0.211977</td>
+      <td>0.030678</td>
     </tr>
     <tr>
       <th>TRVOU</th>
@@ -13692,6 +13718,7 @@ CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction vol
       <td>0.859885</td>
       <td>0.802954</td>
       <td>-0.096114</td>
+      <td>-0.010498</td>
     </tr>
     <tr>
       <th>NTRAN</th>
@@ -13702,6 +13729,7 @@ CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction vol
       <td>0.444562</td>
       <td>0.262360</td>
       <td>-0.656961</td>
+      <td>0.228882</td>
     </tr>
     <tr>
       <th>NADDU</th>
@@ -13712,6 +13740,7 @@ CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction vol
       <td>0.676051</td>
       <td>0.505749</td>
       <td>-0.537846</td>
+      <td>0.192188</td>
     </tr>
     <tr>
       <th>MIREV</th>
@@ -13722,6 +13751,7 @@ CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction vol
       <td>1.000000</td>
       <td>0.935435</td>
       <td>-0.051208</td>
+      <td>-0.020209</td>
     </tr>
     <tr>
       <th>CPTRA</th>
@@ -13732,6 +13762,7 @@ CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction vol
       <td>0.935435</td>
       <td>1.000000</td>
       <td>0.065286</td>
+      <td>-0.076442</td>
     </tr>
     <tr>
       <th>CPTRV</th>
@@ -13741,6 +13772,18 @@ CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction vol
       <td>-0.537846</td>
       <td>-0.051208</td>
       <td>0.065286</td>
+      <td>1.000000</td>
+      <td>-0.235095</td>
+    </tr>
+    <tr>
+      <th>TOUTV</th>
+      <td>0.030678</td>
+      <td>-0.010498</td>
+      <td>0.228882</td>
+      <td>0.192188</td>
+      <td>-0.020209</td>
+      <td>-0.076442</td>
+      <td>-0.235095</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -13765,7 +13808,7 @@ CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction vol
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">correlation_heatmap</span><span class="p">(</span><span class="n">data_frame</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(),</span> <span class="s2">&quot;Correlation among different variables all-time&quot;</span><span class="p">)</span>
@@ -13786,7 +13829,7 @@ CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction vol
 
 
 <div class="output_html rendered_html output_subarea ">
-<div id="e4c53bfa-d1dd-4816-8a25-c600ff3aa198" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("e4c53bfa-d1dd-4816-8a25-c600ff3aa198", [{"type": "heatmap", "z": [[1.0, 0.1436287059209968, 0.060753780146043095, 0.09198109483015779, 0.05653717077719202, -0.02842840947768235, -0.3135358585449712], [0.1436287059209968, 1.0, 0.05557078366422363, 0.13713474545594173, 0.12710682955054403, 0.07302516202490722, -0.1235052809661711], [0.060753780146043095, 0.05557078366422363, 1.0, 0.8117464050747168, 0.05624217462013872, -0.14983739387490722, -0.0032509113274365887], [0.09198109483015779, 0.13713474545594173, 0.8117464050747168, 1.0, 0.16886863020566387, -0.16467595972108945, -0.0018555385154802317], [0.05653717077719202, 0.12710682955054403, 0.05624217462013872, 0.16886863020566387, 1.0, 0.17373750661037368, 0.09636208179507769], [-0.02842840947768235, 0.07302516202490722, -0.14983739387490722, -0.16467595972108945, 0.17373750661037368, 1.0, 0.11335273837971681], [-0.3135358585449712, -0.1235052809661711, -0.0032509113274365887, -0.0018555385154802317, 0.09636208179507769, 0.11335273837971681, 1.0]], "x": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV"], "y": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV"], "colorbar": {"title": "Pearson Coefficient"}, "zmax": 1.0, "zmin": -1.0}], {"title": "Correlation among different variables all-time"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="2a68b979-819d-4336-8e90-3bbd98ebc359" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("2a68b979-819d-4336-8e90-3bbd98ebc359", [{"type": "heatmap", "z": [[1.0, 0.1436287059209968, 0.060753780146043095, 0.09198109483015779, 0.05653717077719202, -0.02842840947768235, -0.3135358585449712, 0.7089805035973368], [0.1436287059209968, 1.0, 0.05557078366422363, 0.13713474545594173, 0.12710682955054403, 0.07302516202490722, -0.1235052809661711, 0.09104551663681917], [0.060753780146043095, 0.05557078366422363, 1.0, 0.8117464050747168, 0.05624217462013872, -0.14983739387490722, -0.0032509113274365887, 0.39145842190550567], [0.09198109483015779, 0.13713474545594173, 0.8117464050747168, 1.0, 0.16886863020566387, -0.16467595972108945, -0.0018555385154802317, 0.549215776398069], [0.05653717077719202, 0.12710682955054403, 0.05624217462013872, 0.16886863020566387, 1.0, 0.17373750661037368, 0.09636208179507769, 0.001506114664032692], [-0.02842840947768235, 0.07302516202490722, -0.14983739387490722, -0.16467595972108945, 0.17373750661037368, 1.0, 0.11335273837971681, -0.0674096664894535], [-0.3135358585449712, -0.1235052809661711, -0.0032509113274365887, -0.0018555385154802317, 0.09636208179507769, 0.11335273837971681, 1.0, -0.014629648073003312], [0.7089805035973368, 0.09104551663681917, 0.39145842190550567, 0.549215776398069, 0.001506114664032692, -0.0674096664894535, -0.014629648073003312, 1.0]], "x": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV", "TOUTV"], "y": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV", "TOUTV"], "colorbar": {"title": "Pearson Coefficient"}, "zmax": 1.0, "zmin": -1.0}], {"title": "Correlation among different variables all-time"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 </div>
 
 </div>
@@ -13797,7 +13840,7 @@ CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction vol
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">correlation_heatmap</span><span class="p">(</span><span class="n">data_frame_cle1</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(),</span> <span class="s2">&quot;Correlation among different variables in 2018&quot;</span><span class="p">)</span>
@@ -13818,7 +13861,7 @@ CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction vol
 
 
 <div class="output_html rendered_html output_subarea ">
-<div id="dae958e1-b372-40c9-963e-93a488e4ebf6" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("dae958e1-b372-40c9-963e-93a488e4ebf6", [{"type": "heatmap", "z": [[1.0, 0.40002231255149767, 0.5599335565646468, 0.3881500238286253, 0.17679851488595563, -0.33901728210015597, -0.8202837615579522], [0.40002231255149767, 1.0, 0.16706757828633903, 0.13664313218071714, 0.0651159287495942, -0.09138537686829878, -0.3333318507440979], [0.5599335565646468, 0.16706757828633903, 1.0, 0.7114821355585512, 0.38266451545101626, -0.5582509304360711, -0.3610960600409037], [0.3881500238286253, 0.13664313218071714, 0.7114821355585512, 1.0, 0.29242920449322485, -0.3829455551045805, -0.23562929702131086], [0.17679851488595563, 0.0651159287495942, 0.38266451545101626, 0.29242920449322485, 1.0, 0.5363521871158887, 0.2841879600546003], [-0.33901728210015597, -0.09138537686829878, -0.5582509304360711, -0.3829455551045805, 0.5363521871158887, 1.0, 0.57987597264023], [-0.8202837615579522, -0.3333318507440979, -0.3610960600409037, -0.23562929702131086, 0.2841879600546003, 0.57987597264023, 1.0]], "x": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV"], "y": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV"], "colorbar": {"title": "Pearson Coefficient"}, "zmax": 1.0, "zmin": -1.0}], {"title": "Correlation among different variables in 2018"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="e6c1bdca-4a88-4c4a-8795-7c0221ba529c" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("e6c1bdca-4a88-4c4a-8795-7c0221ba529c", [{"type": "heatmap", "z": [[1.0, 0.40002231255149767, 0.5599335565646468, 0.3881500238286253, 0.17679851488595563, -0.33901728210015597, -0.8202837615579522, 0.44902845481082704], [0.40002231255149767, 1.0, 0.16706757828633903, 0.13664313218071714, 0.0651159287495942, -0.09138537686829878, -0.3333318507440979, 0.19718413529140802], [0.5599335565646468, 0.16706757828633903, 1.0, 0.7114821355585512, 0.38266451545101626, -0.5582509304360711, -0.3610960600409037, 0.37989092103674793], [0.3881500238286253, 0.13664313218071714, 0.7114821355585512, 1.0, 0.29242920449322485, -0.3829455551045805, -0.23562929702131086, 0.2701105023360478], [0.17679851488595563, 0.0651159287495942, 0.38266451545101626, 0.29242920449322485, 1.0, 0.5363521871158887, 0.2841879600546003, 0.09272483827685978], [-0.33901728210015597, -0.09138537686829878, -0.5582509304360711, -0.3829455551045805, 0.5363521871158887, 1.0, 0.57987597264023, -0.25315055977492557], [-0.8202837615579522, -0.3333318507440979, -0.3610960600409037, -0.23562929702131086, 0.2841879600546003, 0.57987597264023, 1.0, -0.3634751252737124], [0.44902845481082704, 0.19718413529140802, 0.37989092103674793, 0.2701105023360478, 0.09272483827685978, -0.25315055977492557, -0.3634751252737124, 1.0]], "x": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV", "TOUTV"], "y": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV", "TOUTV"], "colorbar": {"title": "Pearson Coefficient"}, "zmax": 1.0, "zmin": -1.0}], {"title": "Correlation among different variables in 2018"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 </div>
 
 </div>
