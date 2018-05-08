@@ -13405,7 +13405,7 @@ Loaded https://poloniex.com/public?command=returnChartData&amp;currencyPair=BTC_
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ETRVU</span> <span class="o">=</span> <span class="n">get_quandl_data</span><span class="p">(</span><span class="s1">&#39;BCHAIN/ETRVU&#39;</span><span class="p">)</span>
@@ -13416,6 +13416,7 @@ Loaded https://poloniex.com/public?command=returnChartData&amp;currencyPair=BTC_
 <span class="n">CPTRA</span> <span class="o">=</span> <span class="n">get_quandl_data</span><span class="p">(</span><span class="s1">&#39;BCHAIN/CPTRA&#39;</span><span class="p">)</span>
 <span class="n">CPTRV</span> <span class="o">=</span> <span class="n">get_quandl_data</span><span class="p">(</span><span class="s1">&#39;BCHAIN/CPTRV&#39;</span><span class="p">)</span>
 <span class="n">TOUTV</span> <span class="o">=</span> <span class="n">get_quandl_data</span><span class="p">(</span><span class="s2">&quot;BCHAIN/TOUTV&quot;</span><span class="p">)</span>
+<span class="n">ATRCT</span> <span class="o">=</span> <span class="n">get_quandl_data</span><span class="p">(</span><span class="s2">&quot;BCHAIN/ATRCT&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -13440,6 +13441,8 @@ Loaded BCHAIN/MIREV from cache
 Loaded BCHAIN/CPTRA from cache
 Loaded BCHAIN/CPTRV from cache
 Loaded BCHAIN/TOUTV from cache
+Downloading BCHAIN/ATRCT from Quandl
+Cached BCHAIN/ATRCT at BCHAIN-ATRCT.pkl
 </pre>
 </div>
 </div>
@@ -13450,7 +13453,7 @@ Loaded BCHAIN/TOUTV from cache
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ETRVU</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ETRVU&quot;</span><span class="p">]</span>
@@ -13461,6 +13464,7 @@ Loaded BCHAIN/TOUTV from cache
 <span class="n">CPTRA</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;CPTRA&quot;</span><span class="p">]</span>
 <span class="n">CPTRV</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;CPTRV&quot;</span><span class="p">]</span>
 <span class="n">TOUTV</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;TOUTV&quot;</span><span class="p">]</span>
+<span class="n">ATRCT</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ATRCT&quot;</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -13470,10 +13474,10 @@ Loaded BCHAIN/TOUTV from cache
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">ETRVU</span><span class="p">,</span> <span class="n">TRVOU</span><span class="p">,</span> <span class="n">NTRAN</span><span class="p">,</span> <span class="n">NADDU</span><span class="p">,</span> <span class="n">MIREV</span><span class="p">,</span> <span class="n">CPTRA</span><span class="p">,</span> <span class="n">CPTRV</span><span class="p">,</span> <span class="n">TOUTV</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">ETRVU</span><span class="p">,</span> <span class="n">TRVOU</span><span class="p">,</span> <span class="n">NTRAN</span><span class="p">,</span> <span class="n">NADDU</span><span class="p">,</span> <span class="n">MIREV</span><span class="p">,</span> <span class="n">CPTRA</span><span class="p">,</span> <span class="n">CPTRV</span><span class="p">,</span> <span class="n">TOUTV</span><span class="p">,</span> <span class="n">ATRCT</span><span class="p">]</span>
 <span class="n">data_frame</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">join</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">)</span>
 <span class="n">data_frame</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;pearson&quot;</span><span class="p">)</span>
 </pre></div>
@@ -13488,7 +13492,7 @@ Loaded BCHAIN/TOUTV from cache
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[47]:</div>
+<div class="prompt output_prompt">Out[55]:</div>
 
 
 
@@ -13519,6 +13523,7 @@ Loaded BCHAIN/TOUTV from cache
       <th>CPTRA</th>
       <th>CPTRV</th>
       <th>TOUTV</th>
+      <th>ATRCT</th>
     </tr>
   </thead>
   <tbody>
@@ -13532,6 +13537,7 @@ Loaded BCHAIN/TOUTV from cache
       <td>0.749079</td>
       <td>-0.009332</td>
       <td>0.152135</td>
+      <td>0.320469</td>
     </tr>
     <tr>
       <th>TRVOU</th>
@@ -13543,6 +13549,7 @@ Loaded BCHAIN/TOUTV from cache
       <td>0.721737</td>
       <td>-0.006940</td>
       <td>0.098593</td>
+      <td>0.243817</td>
     </tr>
     <tr>
       <th>NTRAN</th>
@@ -13554,6 +13561,7 @@ Loaded BCHAIN/TOUTV from cache
       <td>0.410444</td>
       <td>-0.023126</td>
       <td>0.355823</td>
+      <td>0.613817</td>
     </tr>
     <tr>
       <th>NADDU</th>
@@ -13565,6 +13573,7 @@ Loaded BCHAIN/TOUTV from cache
       <td>0.513063</td>
       <td>-0.022019</td>
       <td>0.327113</td>
+      <td>0.582933</td>
     </tr>
     <tr>
       <th>MIREV</th>
@@ -13576,6 +13585,7 @@ Loaded BCHAIN/TOUTV from cache
       <td>0.871395</td>
       <td>-0.010298</td>
       <td>0.112946</td>
+      <td>0.298151</td>
     </tr>
     <tr>
       <th>CPTRA</th>
@@ -13587,6 +13597,7 @@ Loaded BCHAIN/TOUTV from cache
       <td>1.000000</td>
       <td>-0.016376</td>
       <td>0.045355</td>
+      <td>0.279019</td>
     </tr>
     <tr>
       <th>CPTRV</th>
@@ -13598,6 +13609,7 @@ Loaded BCHAIN/TOUTV from cache
       <td>-0.016376</td>
       <td>1.000000</td>
       <td>-0.016268</td>
+      <td>-0.032907</td>
     </tr>
     <tr>
       <th>TOUTV</th>
@@ -13608,6 +13620,19 @@ Loaded BCHAIN/TOUTV from cache
       <td>0.112946</td>
       <td>0.045355</td>
       <td>-0.016268</td>
+      <td>1.000000</td>
+      <td>0.370142</td>
+    </tr>
+    <tr>
+      <th>ATRCT</th>
+      <td>0.320469</td>
+      <td>0.243817</td>
+      <td>0.613817</td>
+      <td>0.582933</td>
+      <td>0.298151</td>
+      <td>0.279019</td>
+      <td>-0.032907</td>
+      <td>0.370142</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -13640,14 +13665,16 @@ CPTRA -&gt; "Data showing miners revenue divided by the number of transactions."
 
 CPTRV -&gt; "Data showing miners revenue as as percentage of the transaction volume."
 
-TOUTV -&gt; "The total value of all transaction outputs per day. This includes coins which were returned to the sender as change."</code></pre>
+TOUTV -&gt; "The total value of all transaction outputs per day. This includes coins which were returned to the sender as change."
+
+ATRCT -&gt; The Dailiy Median time take for transactions to be accepted into a block.</code></pre>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_frame_cle1</span> <span class="o">=</span> <span class="n">data_frame</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">1224</span><span class="p">)</span>
@@ -13664,7 +13691,7 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[48]:</div>
+<div class="prompt output_prompt">Out[56]:</div>
 
 
 
@@ -13695,6 +13722,7 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
       <th>CPTRA</th>
       <th>CPTRV</th>
       <th>TOUTV</th>
+      <th>ATRCT</th>
     </tr>
   </thead>
   <tbody>
@@ -13708,6 +13736,7 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
       <td>0.821587</td>
       <td>-0.211977</td>
       <td>0.030678</td>
+      <td>0.278335</td>
     </tr>
     <tr>
       <th>TRVOU</th>
@@ -13719,6 +13748,7 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
       <td>0.802954</td>
       <td>-0.096114</td>
       <td>-0.010498</td>
+      <td>0.200741</td>
     </tr>
     <tr>
       <th>NTRAN</th>
@@ -13730,6 +13760,7 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
       <td>0.262360</td>
       <td>-0.656961</td>
       <td>0.228882</td>
+      <td>0.521652</td>
     </tr>
     <tr>
       <th>NADDU</th>
@@ -13741,6 +13772,7 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
       <td>0.505749</td>
       <td>-0.537846</td>
       <td>0.192188</td>
+      <td>0.501860</td>
     </tr>
     <tr>
       <th>MIREV</th>
@@ -13752,6 +13784,7 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
       <td>0.935435</td>
       <td>-0.051208</td>
       <td>-0.020209</td>
+      <td>0.196291</td>
     </tr>
     <tr>
       <th>CPTRA</th>
@@ -13763,6 +13796,7 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
       <td>1.000000</td>
       <td>0.065286</td>
       <td>-0.076442</td>
+      <td>0.143690</td>
     </tr>
     <tr>
       <th>CPTRV</th>
@@ -13774,6 +13808,7 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
       <td>0.065286</td>
       <td>1.000000</td>
       <td>-0.235095</td>
+      <td>-0.413126</td>
     </tr>
     <tr>
       <th>TOUTV</th>
@@ -13784,6 +13819,19 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
       <td>-0.020209</td>
       <td>-0.076442</td>
       <td>-0.235095</td>
+      <td>1.000000</td>
+      <td>0.040096</td>
+    </tr>
+    <tr>
+      <th>ATRCT</th>
+      <td>0.278335</td>
+      <td>0.200741</td>
+      <td>0.521652</td>
+      <td>0.501860</td>
+      <td>0.196291</td>
+      <td>0.143690</td>
+      <td>-0.413126</td>
+      <td>0.040096</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -13808,7 +13856,7 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">correlation_heatmap</span><span class="p">(</span><span class="n">data_frame</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(),</span> <span class="s2">&quot;Correlation among different variables all-time&quot;</span><span class="p">)</span>
@@ -13829,7 +13877,7 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
 
 
 <div class="output_html rendered_html output_subarea ">
-<div id="2a68b979-819d-4336-8e90-3bbd98ebc359" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("2a68b979-819d-4336-8e90-3bbd98ebc359", [{"type": "heatmap", "z": [[1.0, 0.1436287059209968, 0.060753780146043095, 0.09198109483015779, 0.05653717077719202, -0.02842840947768235, -0.3135358585449712, 0.7089805035973368], [0.1436287059209968, 1.0, 0.05557078366422363, 0.13713474545594173, 0.12710682955054403, 0.07302516202490722, -0.1235052809661711, 0.09104551663681917], [0.060753780146043095, 0.05557078366422363, 1.0, 0.8117464050747168, 0.05624217462013872, -0.14983739387490722, -0.0032509113274365887, 0.39145842190550567], [0.09198109483015779, 0.13713474545594173, 0.8117464050747168, 1.0, 0.16886863020566387, -0.16467595972108945, -0.0018555385154802317, 0.549215776398069], [0.05653717077719202, 0.12710682955054403, 0.05624217462013872, 0.16886863020566387, 1.0, 0.17373750661037368, 0.09636208179507769, 0.001506114664032692], [-0.02842840947768235, 0.07302516202490722, -0.14983739387490722, -0.16467595972108945, 0.17373750661037368, 1.0, 0.11335273837971681, -0.0674096664894535], [-0.3135358585449712, -0.1235052809661711, -0.0032509113274365887, -0.0018555385154802317, 0.09636208179507769, 0.11335273837971681, 1.0, -0.014629648073003312], [0.7089805035973368, 0.09104551663681917, 0.39145842190550567, 0.549215776398069, 0.001506114664032692, -0.0674096664894535, -0.014629648073003312, 1.0]], "x": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV", "TOUTV"], "y": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV", "TOUTV"], "colorbar": {"title": "Pearson Coefficient"}, "zmax": 1.0, "zmin": -1.0}], {"title": "Correlation among different variables all-time"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="0a46f592-0a76-4cba-8d9d-3708ef4a86df" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("0a46f592-0a76-4cba-8d9d-3708ef4a86df", [{"type": "heatmap", "z": [[1.0, 0.1436287059209968, 0.060753780146043095, 0.09198109483015779, 0.05653717077719202, -0.02842840947768235, -0.3135358585449712, 0.7089805035973368, 0.040930887352107294], [0.1436287059209968, 1.0, 0.05557078366422363, 0.13713474545594173, 0.12710682955054403, 0.07302516202490722, -0.1235052809661711, 0.09104551663681917, 0.05901491970090323], [0.060753780146043095, 0.05557078366422363, 1.0, 0.8117464050747168, 0.05624217462013872, -0.14983739387490722, -0.0032509113274365887, 0.39145842190550567, 0.08829458314083598], [0.09198109483015779, 0.13713474545594173, 0.8117464050747168, 1.0, 0.16886863020566387, -0.16467595972108945, -0.0018555385154802317, 0.549215776398069, 0.053361738604651945], [0.05653717077719202, 0.12710682955054403, 0.05624217462013872, 0.16886863020566387, 1.0, 0.17373750661037368, 0.09636208179507769, 0.001506114664032692, -0.4381432268379094], [-0.02842840947768235, 0.07302516202490722, -0.14983739387490722, -0.16467595972108945, 0.17373750661037368, 1.0, 0.11335273837971681, -0.0674096664894535, -0.4079954685436727], [-0.3135358585449712, -0.1235052809661711, -0.0032509113274365887, -0.0018555385154802317, 0.09636208179507769, 0.11335273837971681, 1.0, -0.014629648073003312, -0.19594825864249799], [0.7089805035973368, 0.09104551663681917, 0.39145842190550567, 0.549215776398069, 0.001506114664032692, -0.0674096664894535, -0.014629648073003312, 1.0, 0.05065095778767414], [0.040930887352107294, 0.05901491970090323, 0.08829458314083598, 0.053361738604651945, -0.4381432268379094, -0.4079954685436727, -0.19594825864249799, 0.05065095778767414, 1.0]], "x": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV", "TOUTV", "ATRCT"], "y": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV", "TOUTV", "ATRCT"], "colorbar": {"title": "Pearson Coefficient"}, "zmax": 1.0, "zmin": -1.0}], {"title": "Correlation among different variables all-time"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 </div>
 
 </div>
@@ -13840,7 +13888,7 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">correlation_heatmap</span><span class="p">(</span><span class="n">data_frame_cle1</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(),</span> <span class="s2">&quot;Correlation among different variables in 2018&quot;</span><span class="p">)</span>
@@ -13861,7 +13909,7 @@ TOUTV -&gt; "The total value of all transaction outputs per day. This includes c
 
 
 <div class="output_html rendered_html output_subarea ">
-<div id="e6c1bdca-4a88-4c4a-8795-7c0221ba529c" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("e6c1bdca-4a88-4c4a-8795-7c0221ba529c", [{"type": "heatmap", "z": [[1.0, 0.40002231255149767, 0.5599335565646468, 0.3881500238286253, 0.17679851488595563, -0.33901728210015597, -0.8202837615579522, 0.44902845481082704], [0.40002231255149767, 1.0, 0.16706757828633903, 0.13664313218071714, 0.0651159287495942, -0.09138537686829878, -0.3333318507440979, 0.19718413529140802], [0.5599335565646468, 0.16706757828633903, 1.0, 0.7114821355585512, 0.38266451545101626, -0.5582509304360711, -0.3610960600409037, 0.37989092103674793], [0.3881500238286253, 0.13664313218071714, 0.7114821355585512, 1.0, 0.29242920449322485, -0.3829455551045805, -0.23562929702131086, 0.2701105023360478], [0.17679851488595563, 0.0651159287495942, 0.38266451545101626, 0.29242920449322485, 1.0, 0.5363521871158887, 0.2841879600546003, 0.09272483827685978], [-0.33901728210015597, -0.09138537686829878, -0.5582509304360711, -0.3829455551045805, 0.5363521871158887, 1.0, 0.57987597264023, -0.25315055977492557], [-0.8202837615579522, -0.3333318507440979, -0.3610960600409037, -0.23562929702131086, 0.2841879600546003, 0.57987597264023, 1.0, -0.3634751252737124], [0.44902845481082704, 0.19718413529140802, 0.37989092103674793, 0.2701105023360478, 0.09272483827685978, -0.25315055977492557, -0.3634751252737124, 1.0]], "x": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV", "TOUTV"], "y": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV", "TOUTV"], "colorbar": {"title": "Pearson Coefficient"}, "zmax": 1.0, "zmin": -1.0}], {"title": "Correlation among different variables in 2018"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="a745fd1f-3d2c-4f8b-9ddd-d6870ab87713" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("a745fd1f-3d2c-4f8b-9ddd-d6870ab87713", [{"type": "heatmap", "z": [[1.0, 0.40002231255149767, 0.5599335565646468, 0.3881500238286253, 0.17679851488595563, -0.33901728210015597, -0.8202837615579522, 0.44902845481082704, 0.05680194452949645], [0.40002231255149767, 1.0, 0.16706757828633903, 0.13664313218071714, 0.0651159287495942, -0.09138537686829878, -0.3333318507440979, 0.19718413529140802, 0.03259266230228465], [0.5599335565646468, 0.16706757828633903, 1.0, 0.7114821355585512, 0.38266451545101626, -0.5582509304360711, -0.3610960600409037, 0.37989092103674793, 0.07327733483783146], [0.3881500238286253, 0.13664313218071714, 0.7114821355585512, 1.0, 0.29242920449322485, -0.3829455551045805, -0.23562929702131086, 0.2701105023360478, 0.02985244969127787], [0.17679851488595563, 0.0651159287495942, 0.38266451545101626, 0.29242920449322485, 1.0, 0.5363521871158887, 0.2841879600546003, 0.09272483827685978, -0.37458608854702197], [-0.33901728210015597, -0.09138537686829878, -0.5582509304360711, -0.3829455551045805, 0.5363521871158887, 1.0, 0.57987597264023, -0.25315055977492557, -0.39714932640731676], [-0.8202837615579522, -0.3333318507440979, -0.3610960600409037, -0.23562929702131086, 0.2841879600546003, 0.57987597264023, 1.0, -0.3634751252737124, -0.21768851413182777], [0.44902845481082704, 0.19718413529140802, 0.37989092103674793, 0.2701105023360478, 0.09272483827685978, -0.25315055977492557, -0.3634751252737124, 1.0, 0.04260095533229041], [0.05680194452949645, 0.03259266230228465, 0.07327733483783146, 0.02985244969127787, -0.37458608854702197, -0.39714932640731676, -0.21768851413182777, 0.04260095533229041, 1.0]], "x": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV", "TOUTV", "ATRCT"], "y": ["ETRVU", "TRVOU", "NTRAN", "NADDU", "MIREV", "CPTRA", "CPTRV", "TOUTV", "ATRCT"], "colorbar": {"title": "Pearson Coefficient"}, "zmax": 1.0, "zmin": -1.0}], {"title": "Correlation among different variables in 2018"}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 </div>
 
 </div>
